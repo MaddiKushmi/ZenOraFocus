@@ -36,7 +36,7 @@ public class DateHandlerServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/study_planner", "root", "123456");
+            Connection con = DBUtil.getConnection();
 
             String query = "SELECT status, due_date FROM tasks WHERE student_id = ? AND due_date = ?";
             PreparedStatement ps = con.prepareStatement(query);

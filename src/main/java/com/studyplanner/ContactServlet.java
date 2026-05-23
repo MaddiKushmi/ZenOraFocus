@@ -37,7 +37,8 @@ public class ContactServlet extends HttpServlet {
 
             // Establish the database connection
             System.out.println("Connecting to the database...");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/study_planner", "root", "123456");
+            //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/study_planner", "root", "123456");
+            conn = DBUtil.getConnection();
 
             // SQL query to insert the message into the database
             String sql = "INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)";

@@ -45,7 +45,7 @@ public class GoToPlannerServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/study_planner", "root", "123456");
+            Connection con = DBUtil.getConnection();
 
             // Query weekly tasks
             String queryWeek = "SELECT * FROM tasks WHERE student_id = ? AND due_date BETWEEN ? AND ?";

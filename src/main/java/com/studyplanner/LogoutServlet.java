@@ -10,9 +10,9 @@ import java.sql.*;
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/study_planner";
-    private static final String DB_USER = "root";
-    private static final String DB_PASS = "123456"; // Update to your password
+//    private static final String DB_URL = "jdbc:mysql://localhost:3306/study_planner";
+//    private static final String DB_USER = "root";
+//    private static final String DB_PASS = "123456"; // Update to your password
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -22,7 +22,7 @@ public class LogoutServlet extends HttpServlet {
             Integer studentId = (Integer) session.getAttribute("studentId"); // use correct session attr
             if (studentId != null) {
                 try {
-                    Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+                    Connection conn = DBUtil.getConnection();
                     PreparedStatement stmt = conn.prepareStatement(
                         "UPDATE login SET status = 'inactive' WHERE id = ?"
                     );
