@@ -23,7 +23,7 @@ public class HistoryServlet extends HttpServlet {
     	    List<Task> completedTasks = new ArrayList<>();
 
     	    try {
-    	        Connection conn = DBConnection.getConnection();
+    	        Connection conn = DBUtil.getConnection();
     	        StringBuilder sql = new StringBuilder("SELECT task_name, due_date, priority, task_type FROM tasks WHERE student_id = ? AND status = 'completed'");
     	        
     	        // Dynamically build query
