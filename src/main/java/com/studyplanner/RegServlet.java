@@ -13,9 +13,9 @@ public class RegServlet extends HttpServlet {
 //    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/study_planner";
 //    private static final String DB_USER = "root";
 //    private static final String DB_PASSWORD = "123456";
-    private static final String URL ="jdbc:mysql://mysql.railway.internal:3306/railway?useSSL=false&allowPublicKeyRetrieval=true";
-	private static final String USER = "root";
-	private static final String PASSWORD = "MibMSVgnxMjgfRhBbEUgvogdGYFCODgo";
+    private static final String JDBC_URL ="jdbc:mysql://mysql.railway.internal:3306/railway?useSSL=false&allowPublicKeyRetrieval=true";
+	private static final String DB_USER = "root";
+	private static final String DB_PASSWORD = "MibMSVgnxMjgfRhBbEUgvogdGYFCODgo";
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
