@@ -49,7 +49,7 @@ public class RegServlet extends HttpServlet {
                     insertStmt.setString(1, username);
                     insertStmt.setString(2, email);
                     insertStmt.setString(3, password);
-                    insertStmt.setString(4, "active");
+                    insertStmt.setString(4, "inactive");
 
                     int rows = insertStmt.executeUpdate();
                     if (rows > 0) {

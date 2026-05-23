@@ -23,7 +23,7 @@ public class LogServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
 //            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/study_planner", "root", "123456")) {
-            try (Connection conn = DriverManager.getConnection("\"jdbc:mysql://kodama.proxy.rlwy.net:40478/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC\"", "root", "MibMSVgnxMjgfRhBbEUgvogdGYFCODgo")){
+            try (Connection conn = DriverManager.getConnection("jdbc:mysql://kodama.proxy.rlwy.net:40478/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "MibMSVgnxMjgfRhBbEUgvogdGYFCODgo")){
             	String sql = "SELECT id FROM login WHERE username = ? AND email = ? AND password = ?";
             	PreparedStatement stmt = conn.prepareStatement(sql);
             	stmt.setString(1, username);
