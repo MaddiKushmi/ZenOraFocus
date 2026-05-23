@@ -13,10 +13,10 @@ public class RegServlet extends HttpServlet {
 //    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/study_planner";
 //    private static final String DB_USER = "root";
 //    private static final String DB_PASSWORD = "123456";
-    private static final String JDBC_URL =
-    		"jdbc:mysql://kodama.proxy.rlwy.net:40478/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-	private static final String DB_USER = "root";
-	private static final String DB_PASSWORD = "MibMSVgnxMjgfRhBbEUgvogdGYFCODgo";
+//    private static final String JDBC_URL =
+//    		"jdbc:mysql://kodama.proxy.rlwy.net:40478/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+//	private static final String DB_USER = "root";
+//	private static final String DB_PASSWORD = "MibMSVgnxMjgfRhBbEUgvogdGYFCODgo";
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -28,7 +28,7 @@ public class RegServlet extends HttpServlet {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            try (Connection connection = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD)) {
+            try (Connection connection = DBUtil.getConnection()) {
                 // Check for existing username or email
                 PreparedStatement checkStmt = connection.prepareStatement(
                     "SELECT username FROM login WHERE username = ? OR email = ?"
